@@ -1,0 +1,107 @@
+html {
+  font-size: 14px;
+  position: relative;
+  min-height: 100%;
+  background-color: #F4F6F7; /* fondo gris claro */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin-bottom: 60px;
+  color: #2C3E50; /* texto oscuro sobrio */
+}
+
+h1, h2, h3 {
+  color: #2C3E50;
+}
+
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #F9E79F; /* amarillo suave */
+  color: #2C3E50;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #F7DC6F;
+  color: #1C2833;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+/* 🎨 Diseño para tarjetas de login y paneles */
+.panel-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  margin-top: 40px;
+}
+
+.panel-header {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2C3E50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.panel-section {
+  margin-bottom: 30px;
+}
+
+.panel-section h4 {
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+
+.panel-section p {
+  color: #566573;
+}
+
+.panel-actions .btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* 🎯 Login visual */
+.card-body h3 {
+  color: #2C3E50;
+}
+
+.card-body p {
+  color: #566573;
+}
+
+.alert-danger {
+  background-color: #FADBD8;
+  color: #922B21;
+  border: none;
+}

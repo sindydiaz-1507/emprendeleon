@@ -1,0 +1,96 @@
+﻿@using Microsoft.Extensions.DependencyInjection
+@using EmprendeLeonWeb.Data
+@using EmprendeLeonWeb.Models
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EmprendeLeonWeb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EmprendeLeonWeb.styles.css" asp-append-version="true" />
+</head>
+<body>
+    @{
+        var nombreUsuario = Context.Session.GetString("NombreUsuario");
+        var idUsuario = Context.Session.GetInt32("IdUsuario");
+        var tieneNegocio = false;
+
+        if (idUsuario != null)
+        {
+            using (var scope = Context.RequestServices.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetService<AppDbContext>();
+                if (db != null)
+                {
+                    tieneNegocio = db.Emprendedores.Any(e => e.IdUsuario == idUsuario);
+                }
+            }
+        }
+    }
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom shadow-sm mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold text-dark" asp-controller="Home" asp-action="Index">
+                    <span style="font-size: 1.2em;">🌱</span> EmprendeLeonWeb
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                    <ul class="navbar-nav">
+                        @if (nombreUsuario != null)
+                        {
+                            <li class="nav-item">
+                                <span class="nav-link text-dark">Hola, @nombreUsuario</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Logout">Cerrar sesión</a>
+                            </li>
+                            @if (!tieneNegocio)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Emprendedor" asp-action="RegistrarNegocio">🏪 Registrar negocio</a>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Login">Iniciar sesión</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Emprendedor" asp-action="RegistrarNegocio">🏪 Registrar negocio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Emprendedor" asp-action="RegistroCompleto">📝 Registro completo</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted mt-5">
+        <div class="container text-center">
+            &copy; 2025 - EmprendeLeonWeb 🌟
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

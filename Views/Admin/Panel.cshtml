@@ -1,0 +1,75 @@
+@model List<EmprendeLeonWeb.Models.UsuarioConNegocio>
+@{
+    ViewData["Title"] = "Panel de Administración";
+}
+
+<div class="container panel-container">
+    <div class="panel-header">👩‍💼 Usuarios registrados</div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Tipo de usuario</th>
+                    <th scope="col">Negocio</th>
+                    <th scope="col">Visible</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Usuario.Nombre</td>
+                        <td>@item.Usuario.Correo</td>
+                        <td>
+                            @if (item.Usuario.TipoUsuario == "admin")
+                            {
+                                <span class="badge bg-warning text-dark">Administrador</span>
+                            }
+                            else if (item.Usuario.TipoUsuario == "emprendedor")
+                            {
+                                <span class="badge bg-success">Emprendedor</span>
+                            }
+                            else if (item.Usuario.TipoUsuario == "cliente")
+                            {
+                                <span class="badge bg-info text-dark">Cliente</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Sin rol</span>
+                            }
+                        </td>
+                        <td>
+                            @if (item.Negocio != null)
+                            {
+                                <strong>@item.Negocio.NombreNegocio</strong><br />
+                                <small>@item.Negocio.Descripcion</small>
+                            }
+                            else
+                            {
+                                <span class="text-muted">Sin negocio</span>
+                            }
+                        </td>
+                        <td>
+                            @if (item.Negocio != null)
+                            {
+                                <form asp-action="CambiarVisibilidad" asp-controller="Admin" method="post">
+                                    <input type="hidden" name="id" value="@item.Negocio.IdEmprendedor" />
+                                    <button type="submit" class="btn btn-sm @(item.Negocio.Visible ? "btn-outline-secondary" : "btn-outline-success")">
+                                        @(item.Negocio.Visible ? "Ocultar" : "Mostrar")
+                                    </button>
+                                </form>
+                            }
+                            else
+                            {
+                                <span class="text-muted">—</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

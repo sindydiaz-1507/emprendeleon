@@ -1,0 +1,62 @@
+@model EmprendeLeonWeb.Models.ViewModels.RegistroCompletoViewModel
+@{
+    ViewData["Title"] = "Registro completo";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">📝 Registro completo</h2>
+
+    <form asp-action="RegistroCompleto" method="post">
+        <h5>👤 Datos del usuario</h5>
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input asp-for="NombreUsuario" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input asp-for="Correo" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input asp-for="Contrasena" type="password" class="form-control" required />
+        </div>
+
+        <h5 class="mt-4">🏪 Datos del negocio</h5>
+        <div class="mb-3">
+            <label class="form-label">Nombre del negocio</label>
+            <input asp-for="NombreNegocio" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Descripcion</label>
+            <textarea asp-for="Descripcion" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Ubicacion</label>
+            <input asp-for="Ubicacion" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Contacto</label>
+            <input asp-for="Contacto" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Categoria</label>
+            <select asp-for="Categoria" class="form-select">
+                <option value="General">General</option>
+                <option value="Artesanias">Artesanias</option>
+                <option value="Cafe y reposteria">Cafe y reposteria</option>
+                <option value="Moda ecologica">Moda ecologica</option>
+                <option value="Tecnologia">Tecnologia</option>
+                <option value="Servicios">Servicios</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Registrar y crear negocio</button>
+    </form>
+
+    @if (TempData["Mensaje"] != null)
+    {
+        <div class="alert alert-info mt-4 text-center">
+            @TempData["Mensaje"]
+        </div>
+    }
+</div>

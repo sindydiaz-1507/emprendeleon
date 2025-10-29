@@ -1,0 +1,48 @@
+@model List<EmprendeLeonWeb.Models.Producto>
+@{
+    ViewData["Title"] = "Mis Productos";
+}
+
+<div class="container panel-container">
+    <div class="panel-header">🛍️ Mis productos</div>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-warning text-center">
+            No tienes productos registrados.
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Disponibilidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var producto in Model)
+                    {
+                        <tr>
+                            <td>@producto.Nombre</td>
+                            <td>C$ @producto.Precio</td>
+                            <td>
+                                @if (producto.Disponibilidad.ToLower() == "disponible")
+                                {
+                                    <span class="badge bg-success">Disponible</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">No disponible</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

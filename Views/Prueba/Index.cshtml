@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Prueba de conexión";
+}
+
+<h2>Prueba de conexión a la base de datos</h2>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
+else
+{
+    <p>Total de usuarios encontrados: @ViewBag.TotalUsuarios</p>
+}
