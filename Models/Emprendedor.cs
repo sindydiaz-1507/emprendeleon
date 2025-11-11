@@ -18,6 +18,12 @@ namespace EmprendeLeonWeb.Models
         public string Categoria { get; set; } = "General";
         public bool Visible { get; set; } = true;
         public string? Descripcion { get; set; }
+
+        [Column("tipo_perfil")]
+        [Required]
+        public string TipoPerfil { get; set; } = "Gratis";
+
+
         public string? Ubicacion { get; set; }
         public string? Contacto { get; set; }
 

@@ -140,5 +140,38 @@ namespace EmprendeLeonWeb.Controllers
             TempData["Mensaje"] = "Registro completo exitoso.";
             return RedirectToAction("MisProductos");
         }
+
+        [HttpGet]
+        public IActionResult PerfilNegocio(int id)
+        {
+            var negocio = _context.Emprendedores
+                .FirstOrDefault(e => e.IdEmprendedor == id && e.Visible == true);
+
+            if (negocio == null)
+                return NotFound();
+
+            var productos = _context.Productos
+                .Where(p => p.IdEmprendedor == id && p.Disponibilidad == "disponible")
+                .Select(p => new ProductoViewModel
+                {
+                    Nombre = p.Nombre,
+                    Descripcion = p.Descripcion ?? "",
+                    Precio = p.Precio,
+                    Imagen = p.Imagen ?? "/img/default.png"
+                }).ToList();
+
+            var modelo = new PerfilNegocioViewModel
+            {
+                IdEmprendedor = negocio.IdEmprendedor,
+                NombreNegocio = negocio.NombreNegocio ?? "",
+                Descripcion = negocio.Descripcion ?? "",
+                Ubicacion = negocio.Ubicacion ?? "",
+                Contacto = negocio.Contacto ?? "",
+                Categoria = negocio.Categoria ?? "General",
+                Productos = productos
+            };
+
+            return View(modelo);
+        }
     }
 }

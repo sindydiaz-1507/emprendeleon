@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Registro de Cliente";
+}
+
+<div class="container mt-5">
+    <h2>Registro de Cliente</h2>
+    <form asp-action="GuardarCliente" method="post">
+        <div class="mb-3">
+            <label for="Nombre" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="Nombre" name="Nombre" required />
+        </div>
+        <div class="mb-3">
+            <label for="Correo" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="Correo" name="Correo" required />
+        </div>
+        <div class="mb-3">
+            <label for="Contrasena" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="Contrasena" name="Contrasena" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Registrarme</button>
+    </form>
+</div>

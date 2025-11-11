@@ -34,7 +34,8 @@ namespace EmprendeLeonWeb.Controllers
             return View(agrupados);
         }
 
-        public IActionResult Negocio(int id)
+        [HttpGet]
+        public IActionResult ProductosPorNegocio(int id)
         {
             var negocio = _context.Emprendedores
                 .Include(e => e.Productos)
@@ -43,7 +44,17 @@ namespace EmprendeLeonWeb.Controllers
             if (negocio == null)
                 return NotFound();
 
-            return View(negocio);
+            var productos = (negocio.Productos ?? new List<Producto>())
+            .Where(p => p.Disponibilidad == "disponible")
+            .ToList();
+
+
+            ViewBag.NombreNegocio = negocio.NombreNegocio;
+            ViewBag.Descripcion = negocio.Descripcion;
+            ViewBag.Contacto = negocio.Contacto;
+            ViewBag.Ubicacion = negocio.Ubicacion;
+
+            return View(productos);
         }
     }
 }

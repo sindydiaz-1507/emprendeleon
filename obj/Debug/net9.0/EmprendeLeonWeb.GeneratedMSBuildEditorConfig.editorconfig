@@ -32,8 +32,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFeHBsb3Jhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lenovo/EmprendeLeonWeb/Views/Cliente/ProductosPorNegocio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxQcm9kdWN0b3NQb3JOZWdvY2lvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/EmprendeLeonWeb/Views/Cuenta/NuevoUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXE51ZXZvVXN1YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/EmprendeLeonWeb/Views/Cuenta/RegistroCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJvQ2xpZW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/EmprendeLeonWeb/Views/Cuenta/RegistroEmprendedor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJvRW1wcmVuZGVkb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/EmprendeLeonWeb/Views/Cuenta/RegistroExitoso.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJvRXhpdG9zby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/EmprendeLeonWeb/Views/Emprendedor/MisProductos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVuZGVkb3JcTWlzUHJvZHVjdG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/EmprendeLeonWeb/Views/Emprendedor/PerfilNegocio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVuZGVkb3JcUGVyZmlsTmVnb2Npby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/EmprendeLeonWeb/Views/Emprendedor/RegistrarNegocio.cshtml]

@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Registro de Emprendedor";
+}
+
+<div class="container mt-5">
+    <h2>Registro de Emprendedor</h2>
+
+    <form asp-action="GuardarEmprendedor" method="post">
+        <div class="mb-3">
+            <label for="NombreUsuario" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="NombreUsuario" name="NombreUsuario" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="Correo" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="Correo" name="Correo" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="Contrasena" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="Contrasena" name="Contrasena" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="NombreNegocio" class="form-label">Nombre del negocio</label>
+            <input type="text" class="form-control" id="NombreNegocio" name="NombreNegocio" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="Ubicacion" class="form-label">Ubicación</label>
+            <input type="text" class="form-control" id="Ubicacion" name="Ubicacion" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="Contacto" class="form-label">Contacto</label>
+            <input type="text" class="form-control" id="Contacto" name="Contacto" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="Descripcion" class="form-label">Descripción de la tienda</label>
+            <textarea class="form-control" id="Descripcion" name="Descripcion" rows="3" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="Categoria" class="form-label">Categoría</label>
+            <select class="form-select" id="Categoria" name="Categoria" required>
+                <option value="">Selecciona una categoría</option>
+                <option value="Artesanías">Artesanías</option>
+                <option value="Moda ecológica">Moda ecológica</option>
+                <option value="Tecnología">Tecnología</option>
+                <option value="Servicios">Servicios</option>
+                <option value="General">General</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+    <label for="TipoPerfil" class="form-label">Tipo de perfil</label>
+    <select class="form-select" id="TipoPerfil" name="TipoPerfil" required>
+        <option value="Gratis">Gratis</option>
+        <option value="Premium">Premium</option>
+    </select>
+</div>
+
+
+        <button type="submit" class="btn btn-success mt-3">Registrarme</button>
+    </form>
+</div>

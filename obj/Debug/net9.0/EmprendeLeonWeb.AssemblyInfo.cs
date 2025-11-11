@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmprendeLeonWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1442da49101235db468b0fa2e7b47f763eacd2c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmprendeLeonWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmprendeLeonWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

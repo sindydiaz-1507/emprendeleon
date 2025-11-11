@@ -41,8 +41,11 @@
                                     @negocio.Productos?.Count() productos disponibles
                                 </p>
 
-                                <a class="btn btn-outline-primary w-100" asp-action="Negocio" asp-route-id="@negocio.IdEmprendedor">
-                                    Ver productos
+                                <a class="btn btn-outline-primary w-100"
+                                   asp-controller="Cliente"
+                                   asp-action="ProductosPorNegocio"
+                                   asp-route-id="@negocio.IdEmprendedor">
+                                   Ver productos
                                 </a>
                             </div>
                         </div>

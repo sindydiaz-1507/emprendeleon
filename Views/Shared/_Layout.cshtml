@@ -51,24 +51,13 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Auth" asp-action="Logout">Cerrar sesión</a>
                             </li>
-                            @if (!tieneNegocio)
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="Emprendedor" asp-action="RegistrarNegocio">🏪 Registrar negocio</a>
-                                </li>
-                            }
                         }
                         else
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Auth" asp-action="Login">Iniciar sesión</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Emprendedor" asp-action="RegistrarNegocio">🏪 Registrar negocio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Emprendedor" asp-action="RegistroCompleto">📝 Registro completo</a>
-                            </li>
+                           
                         }
                     </ul>
                 </div>

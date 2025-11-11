@@ -101,3 +101,4 @@ C:\Users\Lenovo\EmprendeLeonWeb\obj\Debug\net9.0\refint\EmprendeLeonWeb.dll
 C:\Users\Lenovo\EmprendeLeonWeb\obj\Debug\net9.0\EmprendeLeonWeb.pdb
 C:\Users\Lenovo\EmprendeLeonWeb\obj\Debug\net9.0\EmprendeLeonWeb.genruntimeconfig.cache
 C:\Users\Lenovo\EmprendeLeonWeb\obj\Debug\net9.0\ref\EmprendeLeonWeb.dll
+C:\Users\Lenovo\EmprendeLeonWeb\obj\Debug\net9.0\EmprendeLeonWeb.sourcelink.json

@@ -1,0 +1,44 @@
+@model List<EmprendeLeonWeb.Models.Producto>
+@{
+    ViewData["Title"] = "Productos del negocio";
+}
+
+<div class="container mt-4">
+    <h2>@ViewBag.NombreNegocio</h2>
+    <p><strong>Descripción:</strong> @ViewBag.Descripcion</p>
+
+    @if (!string.IsNullOrEmpty(ViewBag.Ubicacion as string))
+    {
+        <p><strong>Ubicación:</strong> @ViewBag.Ubicacion</p>
+    }
+
+    @if (!string.IsNullOrEmpty(ViewBag.Contacto as string))
+    {
+        <p><strong>Contacto:</strong> <a href="https://wa.me/@ViewBag.Contacto" target="_blank">@ViewBag.Contacto</a></p>
+    }
+
+    <h3 class="mt-4">🛍️ Productos disponibles</h3>
+
+    @if (Model.Any())
+    {
+        <div class="row">
+            @foreach (var producto in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="@producto.Imagen" class="card-img-top" alt="@producto.Nombre" />
+                        <div class="card-body">
+                            <h5 class="card-title">@producto.Nombre</h5>
+                            <p class="card-text">@producto.Descripcion</p>
+                            <p><strong>Precio:</strong> C$@producto.Precio</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>No hay productos disponibles en este momento.</p>
+    }
+</div>
